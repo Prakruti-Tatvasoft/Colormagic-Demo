@@ -1,4 +1,4 @@
-import { Button } from 'antd'
+import { Button, Skeleton } from 'antd'
 import React, { useContext, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import styled from 'styled-components'
@@ -23,7 +23,22 @@ const CatDetail = () => {
 	return (
 		<>
 			{
-				isLoading ? <h1>Loading...</h1> :
+				isLoading
+					?
+					<div className='container'>
+						<div className='row'>
+							<div className='col-md-2 mt-2'>
+								<Skeleton.Button shape='default' block='checked' style={{ width: '100px', marginBottom: '15px' }} />
+							</div>
+						</div>
+						<div className='row'>
+							<div className='col-md-12'>
+								<Skeleton.Image active  className='cat-detail-img'/>
+								<Skeleton active />
+							</div>
+						</div>
+					</div>
+					:
 					<div className='container mt-2'>
 						<div className='row'>
 							<div className='col-md-2'>

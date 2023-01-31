@@ -1,4 +1,4 @@
-import { Button, Card, Select } from 'antd'
+import { Button, Card, Select, Skeleton } from 'antd'
 import { Fragment, useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
@@ -48,7 +48,16 @@ const Home = () => {
 			{
 				isLoading
 					?
-					<h1>Loading....</h1>
+					// <h1>Loading....</h1>
+					<div className='container'>
+						<div className='row'>
+							<div className='col-md-4 mb-3 mt-3'>
+								<Skeleton paragraph={{rows:1}} />
+								<Skeleton.Button shape='default' block='checked' />
+								<Skeleton.Button shape='default' block='checked' style={{marginTop: '10px'}}/>
+							</div>
+						</div>
+					</div>
 					:
 					<div className='container'>
 						<div className='row'>
