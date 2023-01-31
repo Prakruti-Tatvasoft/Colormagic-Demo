@@ -18,7 +18,6 @@ const SelectBreed = styled(Select)`
 `
 
 const Home = () => {
-
 	const [breedId, setBreedId] = useState()
 	const { breed: selectedBreed } = useContext(AppContext)
 	const navigate = useNavigate()
@@ -30,6 +29,7 @@ const Home = () => {
 		setBreedId(value)
 	}
 
+	// set breedId if click back from view details
 	useEffect(() => {
 		setBreedId(selectedBreed)
 	}, [selectedBreed])
